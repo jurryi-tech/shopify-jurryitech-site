@@ -14,10 +14,26 @@ export default function ContactForm() {
   if (status === "sent") {
     return (
       <div style={{ textAlign: "center", padding: 32 }}>
-        <div style={{ fontFamily: "var(--font-display)", fontSize: 24, fontWeight: 600, color: "var(--cream)", marginBottom: 12 }}>
+        <div
+          style={{
+            width: 48,
+            height: 48,
+            borderRadius: "50%",
+            background: "var(--bg-mint)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            margin: "0 auto 16px",
+          }}
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M5 12l5 5L20 7" />
+          </svg>
+        </div>
+        <div style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 700, color: "var(--text-heading)", marginBottom: 8, letterSpacing: "-0.01em" }}>
           Enquiry sent.
         </div>
-        <p style={{ fontFamily: "var(--font-sans)", fontSize: 14, color: "var(--coastal)" }}>
+        <p style={{ fontFamily: "var(--font-sans)", fontSize: 14, color: "var(--text-muted)" }}>
           I&rsquo;ll be in touch within 4 hours during AEST business days.
         </p>
       </div>
@@ -49,7 +65,7 @@ export default function ContactForm() {
         }}
       >
         Or email directly:{" "}
-        <a href="mailto:enquiries@uddit.site" style={{ color: "var(--cream)", textDecoration: "none" }}>
+        <a href="mailto:enquiries@uddit.site" style={{ color: "var(--green-dark)", textDecoration: "none", fontWeight: 600 }}>
           enquiries@uddit.site
         </a>
       </p>

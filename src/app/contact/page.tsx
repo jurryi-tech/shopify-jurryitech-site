@@ -43,9 +43,21 @@ const infoBlocks = [
 export default function ContactPage() {
   return (
     <main
-      className="noise"
-      style={{ background: "var(--charcoal)", minHeight: "100vh", padding: "100px 24px" }}
+      style={{ background: "var(--bg-white)", minHeight: "100vh", padding: "100px 24px", position: "relative", overflow: "hidden" }}
     >
+      <div
+        aria-hidden
+        style={{
+          position: "absolute",
+          top: -200,
+          left: -200,
+          width: 600,
+          height: 600,
+          background: "radial-gradient(circle, rgba(149,191,71,0.10) 0%, transparent 65%)",
+          zIndex: 0,
+          pointerEvents: "none",
+        }}
+      />
       <div
         style={{
           maxWidth: 1100,
@@ -54,6 +66,8 @@ export default function ContactPage() {
           gridTemplateColumns: "1.3fr 1fr",
           gap: 64,
           alignItems: "start",
+          position: "relative",
+          zIndex: 1,
         }}
         className="contact-grid"
       >
@@ -63,7 +77,7 @@ export default function ContactPage() {
             style={{
               fontWeight: 700,
               fontSize: "clamp(28px, 4vw, 40px)",
-              color: "var(--cream)",
+              color: "var(--text-heading)",
               margin: 0,
               lineHeight: 1.2,
             }}
@@ -74,7 +88,7 @@ export default function ContactPage() {
             style={{
               fontFamily: "var(--font-sans)",
               fontSize: 16,
-              color: "var(--coastal)",
+              color: "var(--text-muted)",
               lineHeight: 1.7,
               maxWidth: 520,
               margin: "16px 0 40px",
@@ -106,7 +120,7 @@ export default function ContactPage() {
                       fontFamily: "var(--font-sans)",
                       fontWeight: 600,
                       fontSize: 15,
-                      color: "var(--cream)",
+                      color: "var(--text-heading)",
                       marginBottom: 4,
                     }}
                   >
@@ -117,7 +131,7 @@ export default function ContactPage() {
                       fontFamily: "var(--font-sans)",
                       fontWeight: 400,
                       fontSize: 14,
-                      color: "var(--coastal)",
+                      color: "var(--text-muted)",
                       lineHeight: 1.6,
                     }}
                   >
@@ -131,9 +145,11 @@ export default function ContactPage() {
 
         <div
           style={{
-            background: "var(--charcoal-card)",
+            background: "var(--bg-white)",
+            border: "1px solid var(--border-card)",
             borderRadius: 12,
             padding: 32,
+            boxShadow: "0 10px 32px rgba(0, 128, 96, 0.06)",
           }}
         >
           <ContactForm />

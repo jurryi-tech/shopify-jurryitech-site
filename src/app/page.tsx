@@ -1,5 +1,4 @@
 import Link from "next/link";
-import HeroSemicircle from "@/components/HeroSemicircle";
 
 const services = [
   {
@@ -90,103 +89,195 @@ const auStrip = [
   "AEST Business Hours",
 ];
 
+const trustBadges = [
+  "12 Products Shipped",
+  "AI-First Development",
+  "Xero & Afterpay Ready",
+  "AEST Hours",
+];
+
 export default function HomePage() {
   return (
     <main>
       {/* ============================================================
-          HERO
+          HERO — two-column with embedded photo as strategic vector
       ============================================================ */}
       <section
-        className="noise"
         style={{
-          background: "var(--charcoal)",
+          background: "var(--bg-white)",
           padding: "80px 24px 100px",
-          textAlign: "center",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
-        <HeroSemicircle />
-
-        <img
-          src="/uddit-shopify.png"
-          alt="Uddit — Shopify Developer"
-          className="hero-photo"
-          style={{ marginTop: -8 }}
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            top: -200,
+            right: -200,
+            width: 600,
+            height: 600,
+            background: "radial-gradient(circle, rgba(149,191,71,0.10) 0%, transparent 65%)",
+            zIndex: 0,
+            pointerEvents: "none",
+          }}
+        />
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            bottom: -180,
+            left: -160,
+            width: 500,
+            height: 500,
+            background: "radial-gradient(circle, rgba(0,128,96,0.08) 0%, transparent 65%)",
+            zIndex: 0,
+            pointerEvents: "none",
+          }}
         />
 
-        <h1
-          className="font-display"
-          style={{
-            fontWeight: 700,
-            fontSize: "clamp(32px, 5vw, 48px)",
-            color: "var(--cream)",
-            maxWidth: 760,
-            margin: "32px auto 0",
-            lineHeight: 1.15,
-          }}
-        >
-          Custom Shopify Solutions for Australian E-Commerce
-        </h1>
-
-        <p
-          style={{
-            fontFamily: "var(--font-sans)",
-            fontSize: 18,
-            color: "var(--coastal)",
-            maxWidth: 560,
-            margin: "16px auto 0",
-            lineHeight: 1.55,
-          }}
-        >
-          AI agents, custom integrations, and automation for stores that have outgrown off-the-shelf apps.
-        </p>
-
         <div
+          className="hero-grid"
           style={{
-            display: "flex",
-            gap: 16,
-            justifyContent: "center",
-            marginTop: 32,
-            flexWrap: "wrap",
+            maxWidth: 1180,
+            margin: "0 auto",
+            display: "grid",
+            gridTemplateColumns: "1.1fr 1fr",
+            gap: 56,
+            alignItems: "center",
+            position: "relative",
+            zIndex: 1,
           }}
         >
-          <Link href="/contact" className="btn-primary">
-            Get a Free Audit
-          </Link>
-          <Link href="/case-studies" className="btn-secondary">
-            View Case Studies
-          </Link>
+          {/* Left: text + CTAs */}
+          <div>
+            <div className="section-eyebrow" style={{ marginBottom: 16 }}>
+              Shopify Development · Australia
+            </div>
+
+            <h1
+              className="font-display"
+              style={{
+                fontWeight: 700,
+                fontSize: "clamp(34px, 5vw, 54px)",
+                color: "var(--text-heading)",
+                margin: 0,
+                lineHeight: 1.08,
+                letterSpacing: "-0.02em",
+              }}
+            >
+              Custom Shopify solutions for{" "}
+              <span style={{ color: "var(--green-dark)" }}>Australian e-commerce</span>.
+            </h1>
+
+            <p
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: 18,
+                color: "var(--text-muted)",
+                maxWidth: 540,
+                margin: "20px 0 0",
+                lineHeight: 1.6,
+              }}
+            >
+              AI agents, custom integrations, and automation for stores that have outgrown
+              off-the-shelf apps. Fixed-price quotes in AUD, AEST business hours.
+            </p>
+
+            <div
+              className="hero-ctas"
+              style={{ display: "flex", gap: 14, marginTop: 32, flexWrap: "wrap" }}
+            >
+              <Link href="/contact" className="btn-primary">
+                Get a Free Audit
+              </Link>
+              <Link href="/case-studies" className="btn-secondary">
+                View Case Studies
+              </Link>
+            </div>
+
+            <div
+              className="hero-trust"
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "14px 24px",
+                marginTop: 36,
+                paddingTop: 24,
+                borderTop: "1px solid var(--border-subtle)",
+              }}
+            >
+              {trustBadges.map((t) => (
+                <div
+                  key={t}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 8,
+                    fontFamily: "var(--font-sans)",
+                    fontSize: 13,
+                    fontWeight: 500,
+                    color: "var(--text-muted)",
+                  }}
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--green-primary)"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M5 12l5 5L20 7" />
+                  </svg>
+                  {t}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right: full hero photo as embedded visual */}
+          <div className="hero-photo-wrap">
+            <img
+              src="/uddit-shopify.png"
+              alt="Uddit — Custom Shopify Development for Australian Merchants"
+              className="hero-photo"
+              loading="eager"
+            />
+          </div>
         </div>
 
-        <p
-          style={{
-            fontFamily: "var(--font-sans)",
-            fontSize: 13,
-            color: "var(--coastal)",
-            opacity: 0.7,
-            marginTop: 40,
-            maxWidth: 720,
-            margin: "40px auto 0",
-            lineHeight: 1.7,
-          }}
-        >
-          12 Products Shipped · Available AEST Hours · AI-First Development · Xero &amp; Afterpay Ready
-        </p>
+        <style>{`
+          @media (max-width: 900px) {
+            .hero-grid {
+              grid-template-columns: 1fr !important;
+              gap: 40px !important;
+              text-align: center;
+            }
+            .hero-ctas { justify-content: center; }
+            .hero-trust { justify-content: center; }
+          }
+        `}</style>
       </section>
 
       {/* ============================================================
           TRUST / PROBLEM
       ============================================================ */}
-      <section style={{ background: "var(--sand)", padding: "60px 24px" }}>
+      <section style={{ background: "var(--bg-cream)", padding: "72px 24px" }}>
         <p
-          className="font-sans"
+          className="font-display"
           style={{
-            fontWeight: 500,
-            fontSize: "clamp(16px, 2vw, 20px)",
-            color: "var(--charcoal)",
+            fontWeight: 600,
+            fontSize: "clamp(20px, 2.4vw, 26px)",
+            color: "var(--text-heading)",
             textAlign: "center",
-            maxWidth: 800,
+            maxWidth: 820,
             margin: "0 auto",
-            lineHeight: 1.55,
+            lineHeight: 1.4,
+            letterSpacing: "-0.01em",
           }}
         >
           52,000+ Shopify stores in Australia. The best ones need custom builds, not $29 apps.
@@ -215,52 +306,57 @@ export default function HomePage() {
       {/* ============================================================
           SERVICES
       ============================================================ */}
-      <section id="services" style={{ background: "var(--cream)", padding: "100px 24px" }}>
+      <section id="services" style={{ background: "var(--bg-white)", padding: "100px 24px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <h2
-            className="font-display"
-            style={{
-              fontWeight: 700,
-              fontSize: 36,
-              color: "var(--charcoal)",
-              textAlign: "center",
-              margin: 0,
-            }}
-          >
-            What I Build
-          </h2>
-          <p
-            style={{
-              fontFamily: "var(--font-sans)",
-              fontSize: 16,
-              color: "var(--coastal)",
-              textAlign: "center",
-              marginTop: 8,
-            }}
-          >
-            Shopify solutions for Australian merchants who need more than a template
-          </p>
+          <div style={{ textAlign: "center" }}>
+            <div className="section-eyebrow">What I Build</div>
+            <h2
+              className="font-display"
+              style={{
+                fontWeight: 700,
+                fontSize: "clamp(28px, 3.6vw, 40px)",
+                color: "var(--text-heading)",
+                margin: "12px 0 0",
+                letterSpacing: "-0.02em",
+              }}
+            >
+              Six services for Australian Shopify merchants.
+            </h2>
+            <p
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: 16,
+                color: "var(--text-muted)",
+                marginTop: 12,
+              }}
+            >
+              Fixed scope. Fixed price in AUD. Delivered on time.
+            </p>
+          </div>
 
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: 24,
+              gridTemplateColumns: "repeat(auto-fit, minmax(290px, 1fr))",
+              gap: 20,
               marginTop: 56,
             }}
           >
             {services.map((s) => (
               <div key={s.title} className="svc-card">
-                <svg
-                  className="svc-card-icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  strokeWidth={1.5}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  {s.icon}
-                </svg>
+                <div className="svc-card-icon-wrap">
+                  <svg
+                    className="svc-card-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={1.7}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    {s.icon}
+                  </svg>
+                </div>
                 <h3 className="svc-card-title">{s.title}</h3>
                 <p className="svc-card-desc">{s.body}</p>
                 <Link href="/contact" className="link-terracotta svc-card-link">
@@ -275,34 +371,33 @@ export default function HomePage() {
       {/* ============================================================
           CASE STUDIES PREVIEW
       ============================================================ */}
-      <section
-        className="noise"
-        style={{ background: "var(--charcoal)", padding: "100px 24px" }}
-      >
+      <section style={{ background: "var(--bg-cream)", padding: "100px 24px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <h2
-            className="font-display"
-            style={{
-              fontWeight: 700,
-              fontSize: 36,
-              color: "var(--cream)",
-              textAlign: "center",
-              margin: 0,
-            }}
-          >
-            Work That Shipped
-          </h2>
-          <p
-            style={{
-              fontFamily: "var(--font-sans)",
-              fontSize: 16,
-              color: "var(--coastal)",
-              textAlign: "center",
-              marginTop: 8,
-            }}
-          >
-            Real builds for real merchants.
-          </p>
+          <div style={{ textAlign: "center" }}>
+            <div className="section-eyebrow">Recent Work</div>
+            <h2
+              className="font-display"
+              style={{
+                fontWeight: 700,
+                fontSize: "clamp(28px, 3.6vw, 40px)",
+                color: "var(--text-heading)",
+                margin: "12px 0 0",
+                letterSpacing: "-0.02em",
+              }}
+            >
+              Work that shipped.
+            </h2>
+            <p
+              style={{
+                fontFamily: "var(--font-sans)",
+                fontSize: 16,
+                color: "var(--text-muted)",
+                marginTop: 12,
+              }}
+            >
+              Real builds for real merchants.
+            </p>
+          </div>
 
           <div
             style={{
@@ -313,13 +408,13 @@ export default function HomePage() {
             }}
           >
             <article className="cs-card">
-              <div className="cs-card-img" style={{ background: "linear-gradient(135deg,#3a3a3a,#525252)" }} />
+              <div className="cs-card-img" />
               <div className="cs-card-body">
                 <div className="cs-card-city">MELBOURNE, VIC</div>
                 <h3 className="cs-card-title">Fashion Brand — Shopify Plus Migration + AI Size Recommendations</h3>
-                <p className="cs-card-text"><strong style={{color:"var(--cream)"}}>Problem:</strong> Stuck on a legacy platform with 30%+ return rates and no virtual sizing.</p>
-                <p className="cs-card-text"><strong style={{color:"var(--cream)"}}>Solution:</strong> Full migration to Shopify Plus with custom AI-powered size recommendation engine.</p>
-                <p className="cs-card-text"><strong style={{color:"var(--cream)"}}>Result:</strong> 40% drop in returns, 25% higher AOV within 3 months.</p>
+                <p className="cs-card-text"><strong>Problem:</strong> Stuck on a legacy platform with 30%+ return rates and no virtual sizing.</p>
+                <p className="cs-card-text"><strong>Solution:</strong> Full migration to Shopify Plus with custom AI-powered size recommendation engine.</p>
+                <p className="cs-card-text"><strong>Result:</strong> 40% drop in returns, 25% higher AOV within 3 months.</p>
                 <Link href="/case-studies" className="link-terracotta" style={{ marginTop: 16, display: "inline-block" }}>
                   View case study →
                 </Link>
@@ -327,13 +422,13 @@ export default function HomePage() {
             </article>
 
             <article className="cs-card">
-              <div className="cs-card-img" style={{ background: "linear-gradient(135deg,#3a3a3a,#525252)" }} />
+              <div className="cs-card-img" />
               <div className="cs-card-body">
                 <div className="cs-card-city">SYDNEY, NSW</div>
                 <h3 className="cs-card-title">Wellness Brand — Custom AI Customer Service Agent</h3>
-                <p className="cs-card-text"><strong style={{color:"var(--cream)"}}>Problem:</strong> App Store chatbot couldn&rsquo;t answer product-specific questions about supplement ingredients and dosages.</p>
-                <p className="cs-card-text"><strong style={{color:"var(--cream)"}}>Solution:</strong> Custom AI agent trained on their entire product knowledge base with ACL-compliant refund handling.</p>
-                <p className="cs-card-text"><strong style={{color:"var(--cream)"}}>Result:</strong> Customer service tickets dropped 60%, 80% of queries handled autonomously.</p>
+                <p className="cs-card-text"><strong>Problem:</strong> App Store chatbot couldn&rsquo;t answer product-specific questions about supplement ingredients and dosages.</p>
+                <p className="cs-card-text"><strong>Solution:</strong> Custom AI agent trained on their entire product knowledge base with ACL-compliant refund handling.</p>
+                <p className="cs-card-text"><strong>Result:</strong> Customer service tickets dropped 60%, 80% of queries handled autonomously.</p>
                 <Link href="/case-studies" className="link-terracotta" style={{ marginTop: 16, display: "inline-block" }}>
                   View case study →
                 </Link>
@@ -341,13 +436,13 @@ export default function HomePage() {
             </article>
 
             <article className="cs-card">
-              <div className="cs-card-img" style={{ background: "linear-gradient(135deg,#3a3a3a,#525252)" }} />
+              <div className="cs-card-img" />
               <div className="cs-card-body">
                 <div className="cs-card-city">BRISBANE, QLD</div>
                 <h3 className="cs-card-title">B2B Supplier — Automated Company Assignment on Shopify Plus</h3>
-                <p className="cs-card-text"><strong style={{color:"var(--cream)"}}>Problem:</strong> Manual B2B onboarding — every new contact required admin verification, no domain mapping.</p>
-                <p className="cs-card-text"><strong style={{color:"var(--cream)"}}>Solution:</strong> Automated domain-based company assignment with granular access controls and admin-approved registration.</p>
-                <p className="cs-card-text"><strong style={{color:"var(--cream)"}}>Result:</strong> Onboarding time from 48hrs to instant for verified domains.</p>
+                <p className="cs-card-text"><strong>Problem:</strong> Manual B2B onboarding — every new contact required admin verification, no domain mapping.</p>
+                <p className="cs-card-text"><strong>Solution:</strong> Automated domain-based company assignment with granular access controls and admin-approved registration.</p>
+                <p className="cs-card-text"><strong>Result:</strong> Onboarding time from 48hrs to instant for verified domains.</p>
                 <Link href="/case-studies" className="link-terracotta" style={{ marginTop: 16, display: "inline-block" }}>
                   View case study →
                 </Link>
@@ -364,9 +459,9 @@ export default function HomePage() {
       </section>
 
       {/* ============================================================
-          AUSTRALIAN AWARENESS STRIP
+          AU AWARENESS STRIP
       ============================================================ */}
-      <section style={{ background: "var(--sand)", padding: "48px 0", overflow: "hidden" }}>
+      <section style={{ background: "var(--bg-mint)", padding: "32px 0", overflow: "hidden" }}>
         <div className="marquee-track">
           {[...auStrip, ...auStrip].map((item, i) => (
             <span key={`${item}-${i}`} className="au-strip-item">
@@ -380,32 +475,35 @@ export default function HomePage() {
       {/* ============================================================
           BLOG PREVIEW
       ============================================================ */}
-      <section style={{ background: "var(--cream)", padding: "100px 24px" }}>
+      <section style={{ background: "var(--bg-white)", padding: "100px 24px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <h2
-            className="font-display"
-            style={{
-              fontWeight: 700,
-              fontSize: 36,
-              color: "var(--charcoal)",
-              textAlign: "center",
-              margin: 0,
-            }}
-          >
-            From the Blog
-          </h2>
+          <div style={{ textAlign: "center" }}>
+            <div className="section-eyebrow">From the Blog</div>
+            <h2
+              className="font-display"
+              style={{
+                fontWeight: 700,
+                fontSize: "clamp(28px, 3.6vw, 40px)",
+                color: "var(--text-heading)",
+                margin: "12px 0 0",
+                letterSpacing: "-0.02em",
+              }}
+            >
+              Practical guides. No fluff.
+            </h2>
+          </div>
 
           <div
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: 32,
+              gap: 24,
               marginTop: 48,
             }}
           >
             <Link href="/blog/sso-multi-store-login" style={{ textDecoration: "none" }}>
               <article className="blog-card">
-                <div className="blog-card-img" style={{ background: "linear-gradient(135deg,#5B7B5E,#3a5a3d)" }} />
+                <div className="blog-card-img" />
                 <div className="blog-card-body">
                   <div className="blog-card-cat">AUTHENTICATION</div>
                   <h3 className="blog-card-title">
@@ -422,7 +520,7 @@ export default function HomePage() {
 
             <Link href="/blog/b2b-company-assignment" style={{ textDecoration: "none" }}>
               <article className="blog-card">
-                <div className="blog-card-img" style={{ background: "linear-gradient(135deg,#C4704B,#8a4d33)" }} />
+                <div className="blog-card-img" />
                 <div className="blog-card-body">
                   <div className="blog-card-cat">B2B AUTOMATION</div>
                   <h3 className="blog-card-title">
@@ -441,21 +539,40 @@ export default function HomePage() {
       </section>
 
       {/* ============================================================
-          CTA
+          CTA — dark green block
       ============================================================ */}
       <section
-        className="noise"
-        style={{ background: "var(--charcoal)", padding: "100px 24px", textAlign: "center" }}
+        style={{
+          background: "var(--bg-dark-green)",
+          padding: "100px 24px",
+          textAlign: "center",
+          position: "relative",
+          overflow: "hidden",
+        }}
       >
-        <div style={{ maxWidth: 600, margin: "0 auto" }}>
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            top: "-30%",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: 600,
+            height: 600,
+            background: "radial-gradient(circle, rgba(149,191,71,0.15) 0%, transparent 60%)",
+            pointerEvents: "none",
+          }}
+        />
+        <div style={{ maxWidth: 600, margin: "0 auto", position: "relative" }}>
           <h2
             className="font-display"
             style={{
               fontWeight: 700,
-              fontSize: "clamp(28px, 4vw, 40px)",
-              color: "var(--cream)",
+              fontSize: "clamp(28px, 4vw, 42px)",
+              color: "var(--text-on-dark)",
               margin: 0,
               lineHeight: 1.2,
+              letterSpacing: "-0.02em",
             }}
           >
             Ready to upgrade your Shopify store?
@@ -463,9 +580,9 @@ export default function HomePage() {
           <p
             style={{
               fontFamily: "var(--font-sans)",
-              fontSize: 16,
-              color: "var(--coastal)",
-              marginTop: 12,
+              fontSize: 17,
+              color: "var(--text-on-dark-muted)",
+              marginTop: 16,
               lineHeight: 1.6,
             }}
           >
@@ -474,8 +591,18 @@ export default function HomePage() {
           <div style={{ marginTop: 32 }}>
             <Link
               href="/contact"
-              className="btn-primary"
-              style={{ padding: "16px 40px", fontSize: 15 }}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                background: "var(--green-light)",
+                color: "var(--bg-dark-green)",
+                fontFamily: "var(--font-sans)",
+                fontWeight: 700,
+                fontSize: 15,
+                padding: "16px 40px",
+                borderRadius: 8,
+                textDecoration: "none",
+              }}
             >
               Book a Free Call
             </Link>
@@ -484,8 +611,8 @@ export default function HomePage() {
             style={{
               fontFamily: "var(--font-sans)",
               fontSize: 13,
-              color: "var(--coastal)",
-              opacity: 0.6,
+              color: "var(--text-on-dark-muted)",
+              opacity: 0.8,
               marginTop: 24,
             }}
           >

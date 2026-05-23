@@ -80,9 +80,21 @@ export default function AboutPage() {
     <main>
       {/* HERO */}
       <section
-        className="noise"
-        style={{ background: "var(--charcoal)", padding: "100px 24px" }}
+        style={{ background: "var(--bg-white)", padding: "100px 24px", position: "relative", overflow: "hidden" }}
       >
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            top: -160,
+            right: -160,
+            width: 500,
+            height: 500,
+            background: "radial-gradient(circle, rgba(149,191,71,0.10) 0%, transparent 65%)",
+            zIndex: 0,
+            pointerEvents: "none",
+          }}
+        />
         <div
           style={{
             maxWidth: 1100,
@@ -101,8 +113,9 @@ export default function AboutPage() {
               style={{
                 fontWeight: 700,
                 fontSize: "clamp(28px, 4vw, 40px)",
-                color: "var(--cream)",
-                lineHeight: 1.2,
+                color: "var(--text-heading)",
+                lineHeight: 1.15,
+                letterSpacing: "-0.02em",
                 margin: "16px 0 24px",
               }}
             >
@@ -112,7 +125,7 @@ export default function AboutPage() {
               style={{
                 fontFamily: "var(--font-sans)",
                 fontSize: 16,
-                color: "var(--coastal)",
+                color: "var(--text-body)",
                 lineHeight: 1.7,
                 maxWidth: 520,
               }}
@@ -161,7 +174,7 @@ export default function AboutPage() {
           style={{
             fontWeight: 700,
             fontSize: 28,
-            color: "var(--charcoal)",
+            color: "var(--text-heading)",
             textAlign: "center",
             margin: "0 0 48px",
           }}
@@ -201,7 +214,7 @@ export default function AboutPage() {
                       fontFamily: "var(--font-sans)",
                       fontWeight: 400,
                       fontSize: 14,
-                      color: "var(--charcoal)",
+                      color: "var(--text-heading)",
                       padding: "4px 0",
                     }}
                   >
@@ -221,7 +234,7 @@ export default function AboutPage() {
           style={{
             fontWeight: 700,
             fontSize: 28,
-            color: "var(--charcoal)",
+            color: "var(--text-heading)",
             textAlign: "center",
             margin: "0 0 56px",
           }}
@@ -258,7 +271,7 @@ export default function AboutPage() {
                   fontFamily: "var(--font-sans)",
                   fontWeight: 600,
                   fontSize: 16,
-                  color: "var(--charcoal)",
+                  color: "var(--text-heading)",
                   margin: "0 0 8px",
                 }}
               >
@@ -269,7 +282,7 @@ export default function AboutPage() {
                   fontFamily: "var(--font-sans)",
                   fontWeight: 400,
                   fontSize: 14,
-                  color: "var(--coastal)",
+                  color: "var(--text-muted)",
                   lineHeight: 1.6,
                   margin: 0,
                 }}

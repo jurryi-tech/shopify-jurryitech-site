@@ -66,26 +66,27 @@ export default function CaseStudiesPage() {
     <main>
       {/* HERO */}
       <section
-        className="noise"
-        style={{ background: "var(--charcoal)", padding: "80px 24px", textAlign: "center" }}
+        style={{ background: "var(--bg-white)", padding: "80px 24px", textAlign: "center" }}
       >
+        <div className="section-eyebrow">Case Studies</div>
         <h1
           className="font-display"
           style={{
             fontWeight: 700,
-            fontSize: "clamp(32px, 5vw, 44px)",
-            color: "var(--cream)",
-            margin: 0,
-            lineHeight: 1.15,
+            fontSize: "clamp(32px, 5vw, 48px)",
+            color: "var(--text-heading)",
+            margin: "12px 0 0",
+            lineHeight: 1.12,
+            letterSpacing: "-0.02em",
           }}
         >
-          Work That Shipped
+          Work that shipped.
         </h1>
         <p
           style={{
             fontFamily: "var(--font-sans)",
             fontSize: 16,
-            color: "var(--coastal)",
+            color: "var(--text-muted)",
             maxWidth: 640,
             margin: "16px auto 0",
             lineHeight: 1.6,
@@ -132,7 +133,7 @@ export default function CaseStudiesPage() {
                   style={{
                     fontWeight: 700,
                     fontSize: 28,
-                    color: "var(--charcoal)",
+                    color: "var(--text-heading)",
                     margin: "12px 0 8px",
                     lineHeight: 1.25,
                   }}
@@ -143,7 +144,7 @@ export default function CaseStudiesPage() {
                   style={{
                     fontFamily: "var(--font-sans)",
                     fontSize: 14,
-                    color: "var(--coastal)",
+                    color: "var(--text-muted)",
                     marginBottom: 24,
                   }}
                 >
@@ -168,7 +169,7 @@ export default function CaseStudiesPage() {
                     style={{
                       fontFamily: "var(--font-sans)",
                       fontSize: 15,
-                      color: "var(--charcoal)",
+                      color: "var(--text-heading)",
                       lineHeight: 1.65,
                       margin: 0,
                     }}
@@ -195,7 +196,7 @@ export default function CaseStudiesPage() {
                     style={{
                       fontFamily: "var(--font-sans)",
                       fontSize: 15,
-                      color: "var(--charcoal)",
+                      color: "var(--text-heading)",
                       lineHeight: 1.65,
                       margin: 0,
                     }}
@@ -224,7 +225,7 @@ export default function CaseStudiesPage() {
                         style={{
                           fontFamily: "var(--font-sans)",
                           fontSize: 12,
-                          color: "var(--charcoal)",
+                          color: "var(--text-heading)",
                           opacity: 0.7,
                           marginTop: 4,
                           lineHeight: 1.4,
@@ -251,17 +252,17 @@ export default function CaseStudiesPage() {
 
       {/* CTA */}
       <section
-        className="noise"
-        style={{ background: "var(--charcoal)", padding: "80px 24px", textAlign: "center" }}
+        style={{ background: "var(--bg-dark-green)", padding: "80px 24px", textAlign: "center" }}
       >
         <h2
           className="font-display"
           style={{
             fontWeight: 700,
-            fontSize: 32,
-            color: "var(--cream)",
+            fontSize: "clamp(28px, 4vw, 38px)",
+            color: "var(--text-on-dark)",
             margin: 0,
             lineHeight: 1.2,
+            letterSpacing: "-0.02em",
           }}
         >
           Your store could be next.
@@ -270,7 +271,7 @@ export default function CaseStudiesPage() {
           style={{
             fontFamily: "var(--font-sans)",
             fontSize: 16,
-            color: "var(--coastal)",
+            color: "var(--text-on-dark-muted)",
             margin: "12px auto 32px",
             maxWidth: 520,
             lineHeight: 1.6,

@@ -27,10 +27,10 @@ export default function Post() {
             style={{ width: 40, height: 40, borderRadius: "50%", objectFit: "cover", objectPosition: "top" }}
           />
           <div>
-            <div style={{ fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: 14, color: "var(--charcoal)" }}>
+            <div style={{ fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: 14, color: "var(--text-heading)" }}>
               Uddit
             </div>
-            <div style={{ fontFamily: "var(--font-sans)", fontSize: 12, color: "var(--coastal)" }}>
+            <div style={{ fontFamily: "var(--font-sans)", fontSize: 12, color: "var(--text-muted)" }}>
               24 May 2026 · 8 min read
             </div>
           </div>
@@ -45,7 +45,7 @@ export default function Post() {
           style={{
             fontWeight: 700,
             fontSize: "clamp(28px, 4vw, 36px)",
-            color: "var(--charcoal)",
+            color: "var(--text-heading)",
             margin: "0 0 32px",
             lineHeight: 1.2,
           }}
@@ -192,7 +192,7 @@ export default function Post() {
         <div
           className="noise"
           style={{
-            background: "var(--charcoal)",
+            background: "var(--bg-dark-green)",
             borderRadius: 12,
             padding: 40,
             marginTop: 64,
@@ -215,7 +215,7 @@ export default function Post() {
             style={{
               fontFamily: "var(--font-sans)",
               fontSize: 14,
-              color: "var(--coastal)",
+              color: "var(--text-muted)",
               margin: "0 0 24px",
             }}
           >

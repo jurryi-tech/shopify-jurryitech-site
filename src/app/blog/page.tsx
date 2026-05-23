@@ -39,7 +39,7 @@ export default function BlogIndex() {
           style={{
             fontWeight: 700,
             fontSize: 36,
-            color: "var(--charcoal)",
+            color: "var(--text-heading)",
             margin: 0,
           }}
         >
@@ -49,7 +49,7 @@ export default function BlogIndex() {
           style={{
             fontFamily: "var(--font-sans)",
             fontSize: 16,
-            color: "var(--coastal)",
+            color: "var(--text-muted)",
             margin: "8px 0 48px",
             lineHeight: 1.6,
           }}
@@ -91,7 +91,7 @@ export default function BlogIndex() {
                       fontFamily: "var(--font-sans)",
                       fontWeight: 600,
                       fontSize: 20,
-                      color: "var(--charcoal)",
+                      color: "var(--text-heading)",
                       margin: "8px 0",
                       lineHeight: 1.35,
                     }}
@@ -102,7 +102,7 @@ export default function BlogIndex() {
                     style={{
                       fontFamily: "var(--font-sans)",
                       fontSize: 14,
-                      color: "var(--charcoal)",
+                      color: "var(--text-heading)",
                       opacity: 0.7,
                       margin: "0 0 12px",
                       lineHeight: 1.55,
@@ -114,7 +114,7 @@ export default function BlogIndex() {
                     style={{
                       fontFamily: "var(--font-sans)",
                       fontSize: 12,
-                      color: "var(--coastal)",
+                      color: "var(--text-muted)",
                       letterSpacing: "0.05em",
                     }}
                   >
