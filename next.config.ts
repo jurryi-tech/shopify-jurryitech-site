@@ -2,10 +2,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  output: "standalone",
+  output: "export",
   images: {
-    formats: ["image/webp"],
+    unoptimized: true,
   },
+  trailingSlash: true,
 };
 
 export default nextConfig;
