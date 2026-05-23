@@ -1,0 +1,833 @@
+/* Fontshare: Clash Display + Satoshi — must precede other @import rules */
+@import url("https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@400,500,600,700&display=swap");
+@import "tailwindcss";
+
+:root {
+  --charcoal: #2D2D2D;
+  --charcoal-deep: #1a1a1a;
+  --charcoal-card: #333333;
+  --cream: #FAF7F2;
+  --sand: #F5F0E8;
+  --terracotta: #C4704B;
+  --terracotta-dark: #A85D3E;
+  --eucalyptus: #5B7B5E;
+  --coastal: #8FA4A8;
+  --hairline: #444444;
+
+  --font-display: "Clash Display", system-ui, -apple-system, sans-serif;
+  --font-sans: "Satoshi", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--cream);
+}
+
+body {
+  background: var(--cream);
+  color: var(--charcoal);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* ============================================================================
+   TYPOGRAPHY
+   ============================================================================ */
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* ============================================================================
+   PAGE FADE-IN
+   ============================================================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* ============================================================================
+   NOISE TEXTURE OVERLAY (for dark sections)
+   ============================================================================ */
+
+.noise {
+  position: relative;
+}
+
+.noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  z-index: 0;
+}
+
+.noise > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================================
+   BUTTONS
+   ============================================================================ */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--terracotta);
+  color: var(--cream);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 14px 32px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: var(--terracotta-dark);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--cream);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12.5px 32px;
+  border-radius: 8px;
+  border: 1.5px solid var(--cream);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: var(--cream);
+  color: var(--charcoal);
+}
+
+/* ============================================================================
+   LINKS
+   ============================================================================ */
+
+.link-terracotta {
+  color: var(--terracotta);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.link-terracotta:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ============================================================================
+   SECTION TITLES
+   ============================================================================ */
+
+.section-eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+}
+
+/* ============================================================================
+   CASE STUDY / SERVICE CARD
+   ============================================================================ */
+
+.tech-tag {
+  display: inline-block;
+  background: var(--charcoal);
+  color: var(--cream);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+/* ============================================================================
+   FORM
+   ============================================================================ */
+
+.form-input {
+  width: 100%;
+  background: var(--charcoal);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  color: var(--cream);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  padding: 12px 16px;
+  transition: border-color 0.2s ease;
+}
+
+.form-input::placeholder {
+  color: var(--coastal);
+  opacity: 0.7;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--terracotta);
+}
+
+textarea.form-input {
+  resize: vertical;
+  min-height: 110px;
+  font-family: var(--font-sans);
+}
+
+/* ============================================================================
+   MARQUEE (Australia awareness strip mobile)
+   ============================================================================ */
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  gap: 48px;
+  animation: marquee 40s linear infinite;
+  width: max-content;
+}
+
+/* ============================================================================
+   MOBILE STICKY CTA
+   ============================================================================ */
+
+.mobile-sticky-cta {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-sticky-cta {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+    background: var(--terracotta);
+    color: var(--cream);
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    z-index: 100;
+  }
+
+  body {
+    padding-bottom: 48px;
+  }
+}
+
+/* ============================================================================
+   RESPONSIVE: hero semicircle becomes horizontal scroll on mobile
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .hero-arc-desktop { display: none; }
+  .hero-arc-mobile { display: flex; }
+}
+
+@media (min-width: 769px) {
+  .hero-arc-desktop { display: block; }
+  .hero-arc-mobile { display: none; }
+}
+
+/* ============================================================================
+   SCROLLBAR
+   ============================================================================ */
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--sand); }
+::-webkit-scrollbar-thumb { background: var(--coastal); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--eucalyptus); }
+
+::selection {
+  background: var(--terracotta);
+  color: var(--cream);
+}
+
+/* ============================================================================
+   NAVIGATION
+   ============================================================================ */
+
+.ud-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--charcoal);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.ud-logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--cream);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.ud-logo-dot {
+  color: var(--eucalyptus);
+  margin-left: 1px;
+}
+
+.ud-nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.ud-nav-link {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--coastal);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.ud-nav-link:hover {
+  color: var(--cream);
+}
+
+.ud-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  background: var(--terracotta);
+  color: var(--cream);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 10px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.ud-nav-cta:hover {
+  background: var(--terracotta-dark);
+}
+
+.ud-locations {
+  background: var(--sand);
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--eucalyptus);
+  text-align: center;
+  padding: 0 16px;
+}
+
+@media (max-width: 900px) {
+  .ud-nav-links {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .ud-locations {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+  .ud-nav {
+    padding: 0 16px;
+  }
+  .ud-nav-cta {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
+
+/* ============================================================================
+   FOOTER
+   ============================================================================ */
+
+.ud-footer {
+  background: var(--charcoal-deep);
+  padding: 60px 32px 24px;
+}
+
+.ud-footer-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 48px;
+}
+
+.ud-footer-logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--cream);
+  letter-spacing: -0.01em;
+}
+
+.ud-footer-desc {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--coastal);
+  max-width: 280px;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+.ud-footer-col-title {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--cream);
+  margin-bottom: 16px;
+}
+
+.ud-footer-link {
+  display: block;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--coastal);
+  text-decoration: none;
+  padding: 4px 0;
+  transition: color 0.2s ease;
+}
+
+.ud-footer-link:hover {
+  color: var(--cream);
+}
+
+.ud-footer-bottom {
+  max-width: 1100px;
+  margin: 40px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid #333;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--coastal);
+}
+
+@media (max-width: 700px) {
+  .ud-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* ============================================================================
+   SERVICE CARD
+   ============================================================================ */
+
+.svc-card {
+  background: var(--sand);
+  border-radius: 12px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.svc-card-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--eucalyptus);
+}
+
+.svc-card-title {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--charcoal);
+  margin: 16px 0 0;
+}
+
+.svc-card-desc {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--charcoal);
+  opacity: 0.8;
+  margin: 8px 0 0;
+  line-height: 1.55;
+}
+
+.svc-card-link {
+  margin-top: 16px;
+  align-self: flex-start;
+}
+
+/* ============================================================================
+   CASE STUDY CARD (homepage preview, dark variant)
+   ============================================================================ */
+
+.cs-card {
+  background: var(--charcoal-card);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cs-card-img {
+  height: 200px;
+  background: #444;
+  background-size: cover;
+  background-position: center;
+}
+
+.cs-card-body {
+  padding: 28px;
+}
+
+.cs-card-city {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--terracotta);
+}
+
+.cs-card-title {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--cream);
+  margin: 8px 0 12px;
+  line-height: 1.35;
+}
+
+.cs-card-text {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--coastal);
+  line-height: 1.6;
+  margin: 4px 0;
+}
+
+/* ============================================================================
+   STAT BLOCKS
+   ============================================================================ */
+
+.stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.stat-block {
+  text-align: center;
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 36px;
+  color: var(--terracotta);
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--charcoal);
+  margin-top: 8px;
+}
+
+/* ============================================================================
+   HERO ARC (semicircle of service icons)
+   ============================================================================ */
+
+.hero-arc-desktop {
+  position: relative;
+  width: 540px;
+  max-width: 90vw;
+  height: 200px;
+  margin: 0 auto 24px;
+}
+
+.hero-arc-icon {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  transform: translate(-50%, -50%);
+}
+
+.hero-arc-icon svg {
+  width: 36px;
+  height: 36px;
+  stroke: var(--eucalyptus);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.hero-arc-label {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--coastal);
+}
+
+.hero-arc-mobile {
+  width: 100%;
+  overflow-x: auto;
+  gap: 24px;
+  padding: 0 16px 16px;
+  scrollbar-width: none;
+}
+
+.hero-arc-mobile::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-arc-mobile .hero-arc-icon {
+  position: static;
+  transform: none;
+  flex-shrink: 0;
+}
+
+/* ============================================================================
+   HERO PHOTO
+   ============================================================================ */
+
+.hero-photo {
+  width: 280px;
+  max-width: 70vw;
+  margin: 0 auto -16px;
+  display: block;
+  object-fit: contain;
+}
+
+/* ============================================================================
+   BLOG CARDS
+   ============================================================================ */
+
+.blog-card {
+  background: var(--sand);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card-img {
+  height: 180px;
+  background: linear-gradient(135deg, #d4c4b0, #c4a890);
+  position: relative;
+}
+
+.blog-card-body {
+  padding: 24px;
+}
+
+.blog-card-cat {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--terracotta);
+}
+
+.blog-card-title {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--charcoal);
+  margin: 8px 0 0;
+  line-height: 1.35;
+}
+
+.blog-card-excerpt {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--charcoal);
+  opacity: 0.7;
+  margin: 8px 0 0;
+  line-height: 1.55;
+}
+
+/* ============================================================================
+   BLOG POST
+   ============================================================================ */
+
+.post-prose {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 17px;
+  color: var(--charcoal);
+  line-height: 1.8;
+}
+
+.post-prose h2 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 24px;
+  margin: 48px 0 16px;
+  color: var(--charcoal);
+}
+
+.post-prose h3 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 20px;
+  margin: 32px 0 12px;
+  color: var(--charcoal);
+}
+
+.post-prose p {
+  margin: 0 0 20px;
+}
+
+.post-prose ul,
+.post-prose ol {
+  margin: 0 0 20px;
+  padding-left: 24px;
+}
+
+.post-prose li {
+  margin-bottom: 8px;
+}
+
+.post-prose a {
+  color: var(--terracotta);
+  text-decoration: none;
+}
+
+.post-prose a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.post-prose code {
+  background: var(--sand);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 15px;
+}
+
+.post-prose pre {
+  background: var(--charcoal);
+  color: var(--cream);
+  border-radius: 8px;
+  padding: 20px;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+.post-prose pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+/* ============================================================================
+   AU STRIP
+   ============================================================================ */
+
+.au-strip-item {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--charcoal);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.au-strip-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--eucalyptus);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
