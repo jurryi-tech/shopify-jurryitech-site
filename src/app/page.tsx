@@ -97,13 +97,13 @@ const trustBadges = [
 ];
 
 const trustLogos = [
-  { src: "/logos/shopify-logo.png", name: "Shopify" },
-  { src: "/logos/afterpay.png", name: "Afterpay" },
-  { src: "/logos/zip-pay-logo-vector.png", name: "Zip Pay" },
-  { src: "/logos/xero.jpg", name: "Xero" },
-  { src: "/logos/myob.png", name: "MYOB" },
-  { src: "/logos/Klaviyo_Logo.jpg", name: "Klaviyo" },
-  { src: "/logos/eparcel.png", name: "Australia Post eParcel" },
+  { src: "/logos/shopify-logo.png", name: "Shopify", scale: 1 },
+  { src: "/logos/afterpay.png", name: "Afterpay", scale: 1.5 },
+  { src: "/logos/zip-pay-logo-vector.png", name: "Zip Pay", scale: 1 },
+  { src: "/logos/xero.jpg", name: "Xero", scale: 1 },
+  { src: "/logos/myob.png", name: "MYOB", scale: 1 },
+  { src: "/logos/Klaviyo_Logo.jpg", name: "Klaviyo", scale: 1 },
+  { src: "/logos/eparcel.png", name: "Australia Post eParcel", scale: 1 },
 ];
 
 export default function HomePage() {
@@ -383,6 +383,7 @@ export default function HomePage() {
               title={logo.name}
               className="trust-logo-img"
               loading="lazy"
+              style={logo.scale !== 1 ? { transform: `scale(${logo.scale})` } : undefined}
             />
           ))}
         </div>
