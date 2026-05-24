@@ -637,7 +637,7 @@ export default function HomePage() {
               marginTop: 24,
             }}
           >
-            Available during AEST business hours · All quotes in AUD · GST-inclusive pricing
+            Available during AEST business hours
           </p>
         </div>
       </section>
