@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "No fluff, no hourly billing surprises — just Shopify builds that work. Based in Delhi, available AEST hours, serving Australian merchants with fixed-price quotes in AUD.",
+    "No fluff, no hourly billing surprises — just Shopify builds that work. Available AEST business hours.",
 };
 
 const stackColumns = [
@@ -121,30 +121,6 @@ export default function AboutPage() {
             >
               No fluff. No hourly billing surprises. Just Shopify builds that actually work.
             </h1>
-            <div
-              style={{
-                fontFamily: "var(--font-sans)",
-                fontSize: 16,
-                color: "var(--text-body)",
-                lineHeight: 1.7,
-                maxWidth: 520,
-              }}
-            >
-              <p style={{ margin: "0 0 16px" }}>
-                I build custom Shopify solutions — AI agents, store migrations, private apps, and authentication systems.
-                I&rsquo;ve shipped 12 products across iOS and Android, and now I focus entirely on helping Shopify merchants
-                who&rsquo;ve outgrown what the App Store can do.
-              </p>
-              <p style={{ margin: "0 0 16px" }}>
-                I&rsquo;m based in Delhi, work during AEST business hours, and I&rsquo;ve spent enough time in the Australian
-                e-commerce ecosystem to know that your store needs Australia Post eParcel — not a generic courier API. That
-                it needs Afterpay at checkout, Xero in the backend, and GST configured properly before you sell a single item.
-              </p>
-              <p style={{ margin: 0 }}>
-                I don&rsquo;t do hourly billing. I quote fixed prices in AUD, scope the work upfront, and deliver on time.
-                If something changes, we talk about it like adults — no surprise invoices.
-              </p>
-            </div>
           </div>
 
           <div>

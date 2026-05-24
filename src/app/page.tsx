@@ -185,7 +185,7 @@ export default function HomePage() {
               }}
             >
               AI agents, custom integrations, and automation for stores that have outgrown
-              off-the-shelf apps. Fixed-price quotes in AUD, AEST business hours.
+              off-the-shelf apps. AEST business hours.
             </p>
 
             <div
@@ -313,18 +313,6 @@ export default function HomePage() {
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ textAlign: "center" }}>
             <div className="section-eyebrow">What I Build</div>
-            <h2
-              className="font-display"
-              style={{
-                fontWeight: 700,
-                fontSize: "clamp(28px, 3.6vw, 40px)",
-                color: "var(--text-heading)",
-                margin: "12px 0 0",
-                letterSpacing: "-0.02em",
-              }}
-            >
-              Six services for Australian Shopify merchants.
-            </h2>
             <p
               style={{
                 fontFamily: "var(--font-sans)",
@@ -333,7 +321,7 @@ export default function HomePage() {
                 marginTop: 12,
               }}
             >
-              Fixed scope. Fixed price in AUD. Delivered on time.
+              Fixed scope. Delivered on time.
             </p>
           </div>
 

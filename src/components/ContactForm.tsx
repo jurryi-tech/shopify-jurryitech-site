@@ -65,8 +65,8 @@ export default function ContactForm() {
         }}
       >
         Or email directly:{" "}
-        <a href="mailto:enquiries@uddit.site" style={{ color: "var(--green-dark)", textDecoration: "none", fontWeight: 600 }}>
-          enquiries@uddit.site
+        <a href="mailto:contact@uddit.site" style={{ color: "var(--green-dark)", textDecoration: "none", fontWeight: 600 }}>
+          contact@uddit.site
         </a>
       </p>
     </form>

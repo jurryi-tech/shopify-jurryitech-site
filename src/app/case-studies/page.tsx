@@ -92,7 +92,7 @@ export default function CaseStudiesPage() {
             lineHeight: 1.6,
           }}
         >
-          Real builds for Australian merchants. No mockups. No concepts. Shipped, live, and generating results.
+          Real builds for Shopify merchants. No mockups. No concepts. Shipped, live, and generating results.
         </p>
       </section>
 

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const infoBlocks = [
   {
     title: "Available AEST Business Hours",
-    body: "Mon–Fri, 9am–6pm AEST. I'm in Delhi, but my calendar runs on your timezone.",
+    body: "Mon–Fri, 9am–6pm AEST.",
     icon: (
       <>
         <circle cx="12" cy="12" r="9" />
