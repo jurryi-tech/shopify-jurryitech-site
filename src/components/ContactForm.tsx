@@ -2,7 +2,10 @@
 
 import { useState } from "react";
 
-const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
+// Formspree endpoint — public by design (visible in network tab on submit).
+// Env var override available for switching to a different form (e.g. staging).
+const FORMSPREE_ENDPOINT =
+  process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "https://formspree.io/f/mwvzqgnb";
 
 type Status = "idle" | "submitting" | "sent" | "error";
 
