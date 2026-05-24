@@ -24,8 +24,8 @@ export default function Footer() {
 
         <div>
           <div className="ud-footer-col-title">Contact</div>
-          <a href="mailto:contact@uddit.site" className="ud-footer-link" style={{ color: "var(--cream)" }}>
-            contact@uddit.site
+          <a href="mailto:contact@jurryi.com" className="ud-footer-link" style={{ color: "var(--cream)" }}>
+            contact@jurryi.com
           </a>
           <div className="ud-footer-link">Available AEST business hours</div>
         </div>

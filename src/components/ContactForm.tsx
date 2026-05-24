@@ -20,7 +20,7 @@ export default function ContactForm() {
     if (!FORMSPREE_ENDPOINT) {
       setStatus("error");
       setErrorMsg(
-        "Form is not yet configured. Please email contact@uddit.site directly."
+        "Form is not yet configured. Please email contact@jurryi.com directly."
       );
       return;
     }
@@ -45,14 +45,14 @@ export default function ContactForm() {
         const data = await res.json().catch(() => ({} as { error?: string }));
         const msg =
           (data && (data as { error?: string }).error) ||
-          "Couldn't send. Please try again or email contact@uddit.site.";
+          "Couldn't send. Please try again or email contact@jurryi.com.";
         setStatus("error");
         setErrorMsg(msg);
       }
     } catch {
       setStatus("error");
       setErrorMsg(
-        "Network error. Please try again or email contact@uddit.site."
+        "Network error. Please try again or email contact@jurryi.com."
       );
     }
   }
@@ -166,10 +166,10 @@ export default function ContactForm() {
       >
         Or email directly:{" "}
         <a
-          href="mailto:contact@uddit.site"
+          href="mailto:contact@jurryi.com"
           style={{ color: "var(--green-dark)", textDecoration: "none", fontWeight: 600 }}
         >
-          contact@uddit.site
+          contact@jurryi.com
         </a>
       </p>
     </form>
