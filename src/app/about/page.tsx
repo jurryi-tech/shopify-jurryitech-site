@@ -149,7 +149,7 @@ export default function AboutPage() {
 
           <div>
             <img
-              src="/uddit-shopify.png"
+              src="/lorduddit.png"
               alt="Uddit"
               style={{ width: "100%", maxWidth: 360, display: "block", margin: "0 auto" }}
             />

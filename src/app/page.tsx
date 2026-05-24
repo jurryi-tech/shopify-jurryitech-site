@@ -242,7 +242,7 @@ export default function HomePage() {
           {/* Right: full hero photo as embedded visual */}
           <div className="hero-photo-wrap">
             <img
-              src="/uddit-shopify.png"
+              src="/lorduddit.png"
               alt="Uddit — Custom Shopify Development for Australian Merchants"
               className="hero-photo"
               loading="eager"

@@ -21,7 +21,7 @@ export default function Post() {
       <article style={{ maxWidth: 720, margin: "0 auto", padding: "48px 24px 80px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
           <img
-            src="/uddit-shopify.png"
+            src="/lorduddit.png"
             alt="Uddit"
             style={{ width: 40, height: 40, borderRadius: "50%", objectFit: "cover", objectPosition: "top" }}
           />
