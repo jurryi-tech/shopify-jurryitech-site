@@ -168,7 +168,10 @@ export default function HomePage() {
               }}
             >
               Custom Shopify solutions for{" "}
-              <span style={{ color: "var(--green-dark)" }}>Australian e-commerce</span>.
+              <span style={{ color: "var(--green-dark)", whiteSpace: "nowrap" }}>
+                Australian e{"‑"}commerce
+              </span>
+              .
             </h1>
 
             <p
