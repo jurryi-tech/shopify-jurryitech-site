@@ -96,6 +96,16 @@ const trustBadges = [
   "AEST Hours",
 ];
 
+const trustLogos = [
+  { src: "/logos/shopify-logo.png", name: "Shopify" },
+  { src: "/logos/afterpay.png", name: "Afterpay" },
+  { src: "/logos/zip-pay-logo-vector.png", name: "Zip Pay" },
+  { src: "/logos/xero.jpg", name: "Xero" },
+  { src: "/logos/myob.png", name: "MYOB" },
+  { src: "/logos/Klaviyo_Logo.jpg", name: "Klaviyo" },
+  { src: "/logos/eparcel.png", name: "Australia Post eParcel" },
+];
+
 export default function HomePage() {
   return (
     <main>
@@ -356,6 +366,25 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ============================================================
+          TRUST LOGOS — horizontal marquee
+      ============================================================ */}
+      <section className="trust-logos-section">
+        <div className="trust-logos-eyebrow">Integrations &amp; Tooling</div>
+        <div className="trust-logo-track">
+          {[...trustLogos, ...trustLogos].map((logo, i) => (
+            <img
+              key={`${logo.name}-${i}`}
+              src={logo.src}
+              alt={logo.name}
+              title={logo.name}
+              className="trust-logo-img"
+              loading="lazy"
+            />
+          ))}
         </div>
       </section>
 
