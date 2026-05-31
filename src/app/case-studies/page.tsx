@@ -24,6 +24,9 @@ const studies = [
     ],
     tech: ["Shopify Plus", "AI/ML", "Australia Post", "Afterpay", "Xero"],
     imgBg: "linear-gradient(135deg,#d4c4b0,#a8907a)",
+    video: "https://res.cloudinary.com/dr17ap4sb/video/upload/f_auto,q_auto/case-studies/melbourne-fashion-reel.mp4",
+    poster:
+      "https://res.cloudinary.com/dr17ap4sb/video/upload/so_8,f_jpg,q_auto/case-studies/melbourne-fashion-reel.jpg",
   },
   {
     bg: "var(--cream)",
@@ -120,11 +123,31 @@ export default function CaseStudiesPage() {
                 style={{
                   direction: "ltr",
                   height: 360,
-                  borderRadius: 8,
-                  background: cs.imgBg,
+                  borderRadius: 16,
+                  overflow: "hidden",
+                  background: cs.video ? "#f2efe9" : cs.imgBg,
                   boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
                 }}
-              />
+              >
+                {cs.video && (
+                  <video
+                    src={cs.video}
+                    poster={cs.poster}
+                    controls
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      display: "block",
+                      background: "#f2efe9",
+                    }}
+                  />
+                )}
+              </div>
 
               <div style={{ direction: "ltr" }}>
                 <div className="section-eyebrow">{cs.city}</div>

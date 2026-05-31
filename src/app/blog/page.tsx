@@ -9,6 +9,16 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "best-shopify-stores",
+    category: "INSPIRATION",
+    title: "39 Beautiful Shopify Stores Worth Stealing Ideas From",
+    excerpt:
+      "A curated tour of 39 of the best-designed, highest-converting Shopify stores — and the specific design and UX moves that make each one work.",
+    imgBg: "linear-gradient(135deg,#C4A890,#8a6f57)",
+    read: "14 min read",
+    date: "31 May 2026",
+  },
+  {
     slug: "sso-multi-store-login",
     category: "AUTHENTICATION",
     title: "How Single Sign-On Solves the Multi-Store Login Nightmare for Shopify Merchants",
