@@ -141,7 +141,7 @@ export default function CaseStudiesPage() {
                     style={{
                       width: "100%",
                       height: "100%",
-                      objectFit: "cover",
+                      objectFit: "contain",
                       display: "block",
                       background: "#f2efe9",
                     }}
