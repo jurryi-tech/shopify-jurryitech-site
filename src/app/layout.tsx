@@ -39,13 +39,58 @@ export const metadata: Metadata = {
       "Custom Shopify development for Australian merchants. AI agents, migrations, B2B automation, integrations with Australia Post, Afterpay, Xero.",
     siteName: "Uddit Shopify Development",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Custom Shopify Solutions for Australian E-Commerce — Uddit",
+    description:
+      "Custom Shopify development for Australian merchants. AI agents, migrations, B2B automation, integrations with Australia Post, Afterpay, Xero.",
+  },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
   alternates: {
     canonical: "/",
   },
+};
+
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Uddit Shopify Development",
+  url: "https://shopify.uddit.site",
+  description:
+    "Custom Shopify development for Australian merchants. AI agents, store migrations, B2B automation, SSO, and integrations with Australia Post, Afterpay, and Xero.",
+  areaServed: "AU",
+  knowsAbout: [
+    "Shopify Plus development",
+    "Shopify store migration",
+    "Shopify B2B automation",
+    "Shopify SSO",
+    "Shopify AI agents",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "sales",
+    email: "contact@jurryi.com",
+    availableLanguage: "English",
+    areaServed: "AU",
+  },
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Uddit Shopify Development",
+  url: "https://shopify.uddit.site",
+  inLanguage: "en-AU",
 };
 
 export default function RootLayout({
@@ -55,6 +100,14 @@ export default function RootLayout({
     <html lang="en-AU">
       <head>
         <link rel="preconnect" href="https://api.fontshare.com" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
       </head>
       <body className="fade-in">
         <Nav />

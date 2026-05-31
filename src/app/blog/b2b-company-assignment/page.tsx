@@ -1,15 +1,28 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ArticleJsonLd from "@/components/ArticleJsonLd";
 
 export const metadata: Metadata = {
   title: "Automating B2B Company Assignment on Shopify Plus",
   description:
     "Domain-based contact mapping, admin-approved registration, granular access control. The complete guide to automating B2B onboarding on Shopify Plus.",
+  alternates: { canonical: "/blog/b2b-company-assignment" },
+  openGraph: {
+    type: "article",
+    url: "/blog/b2b-company-assignment",
+    images: ["/opengraph-image"],
+    title: "Automating B2B Company Assignment on Shopify Plus: The Complete Guide",
+    description:
+      "Domain-based contact mapping, admin-approved registration, granular access control. The complete guide to automating B2B onboarding on Shopify Plus.",
+    publishedTime: "2026-05-18",
+    authors: ["Uddit"],
+  },
 };
 
 export default function Post() {
   return (
     <main style={{ background: "var(--cream)", minHeight: "100vh" }}>
+      <ArticleJsonLd slug="b2b-company-assignment" />
       <div
         style={{
           width: "100%",

@@ -1,15 +1,28 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ArticleJsonLd from "@/components/ArticleJsonLd";
 
 export const metadata: Metadata = {
   title: "How SSO Solves the Multi-Store Shopify Login Nightmare",
   description:
     "Single Sign-On for Shopify merchants running multiple storefronts. SAML, OAuth, OpenID Connect — what to choose, how it works, and why AU brands scaling internationally need it.",
+  alternates: { canonical: "/blog/sso-multi-store-login" },
+  openGraph: {
+    type: "article",
+    url: "/blog/sso-multi-store-login",
+    images: ["/opengraph-image"],
+    title: "How SSO Solves the Multi-Store Shopify Login Nightmare",
+    description:
+      "Single Sign-On for Shopify merchants running multiple storefronts. SAML, OAuth, OpenID Connect — what to choose, how it works, and why AU brands scaling internationally need it.",
+    publishedTime: "2026-05-24",
+    authors: ["Uddit"],
+  },
 };
 
 export default function Post() {
   return (
     <main style={{ background: "var(--cream)", minHeight: "100vh" }}>
+      <ArticleJsonLd slug="sso-multi-store-login" />
       {/* Cover */}
       <div
         style={{

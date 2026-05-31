@@ -4,6 +4,15 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "No fluff, no hourly billing surprises — just Shopify builds that work. Available AEST business hours.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    type: "website",
+    url: "/about",
+    images: ["/opengraph-image"],
+    title: "About — Uddit Shopify Development",
+    description:
+      "No fluff, no hourly billing surprises — just Shopify builds that work. Available AEST business hours.",
+  },
 };
 
 const stackColumns = [

@@ -1,10 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ArticleJsonLd from "@/components/ArticleJsonLd";
 
 export const metadata: Metadata = {
   title: "39 Beautiful Shopify Stores Worth Stealing Ideas From",
   description:
     "A curated tour of 39 of the best-designed, highest-converting Shopify stores — clothing, beauty, home, pets, electronics — and the design and UX moves that make each one work.",
+  alternates: { canonical: "/blog/best-shopify-stores" },
+  openGraph: {
+    type: "article",
+    url: "/blog/best-shopify-stores",
+    images: ["/opengraph-image"],
+    title: "39 Beautiful Shopify Stores Worth Stealing Ideas From",
+    description:
+      "A curated tour of 39 of the best-designed, highest-converting Shopify stores — and the design and UX moves that make each one work.",
+    publishedTime: "2026-05-31",
+    authors: ["Uddit"],
+  },
 };
 
 const CDN = "https://res.cloudinary.com/dr17ap4sb/image/upload/tidio-best-shopify-stores";
@@ -355,6 +367,7 @@ const sections: { title: string; stores: Store[] }[] = [
 export default function Post() {
   return (
     <main style={{ background: "var(--cream)", minHeight: "100vh" }}>
+      <ArticleJsonLd slug="best-shopify-stores" />
       {/* Cover */}
       <div
         style={{

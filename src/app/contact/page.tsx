@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Free 30-minute Shopify strategy call. AEST business hours. Fixed-price quotes in AUD. Response within 4 hours during AU business days.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    type: "website",
+    url: "/contact",
+    images: ["/opengraph-image"],
+    title: "Contact — Uddit Shopify Development",
+    description:
+      "Free 30-minute Shopify strategy call. AEST business hours. Fixed-price quotes in AUD. Response within 4 hours during AU business days.",
+  },
 };
 
 const infoBlocks = [

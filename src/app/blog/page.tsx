@@ -1,44 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { posts } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "Blog",
   description:
     "Practical Shopify guides for Australian merchants. SSO, B2B automation, custom AI agents, migrations. No fluff.",
+  alternates: { canonical: "/blog" },
+  openGraph: {
+    type: "website",
+    url: "/blog",
+    images: ["/opengraph-image"],
+    title: "Blog — Uddit Shopify Development",
+    description:
+      "Practical Shopify guides for Australian merchants. SSO, B2B automation, custom AI agents, migrations. No fluff.",
+  },
 };
-
-const posts = [
-  {
-    slug: "best-shopify-stores",
-    category: "INSPIRATION",
-    title: "39 Beautiful Shopify Stores Worth Stealing Ideas From",
-    excerpt:
-      "A curated tour of 39 of the best-designed, highest-converting Shopify stores — and the specific design and UX moves that make each one work.",
-    imgBg: "linear-gradient(135deg,#C4A890,#8a6f57)",
-    read: "14 min read",
-    date: "31 May 2026",
-  },
-  {
-    slug: "sso-multi-store-login",
-    category: "AUTHENTICATION",
-    title: "How Single Sign-On Solves the Multi-Store Login Nightmare for Shopify Merchants",
-    excerpt:
-      "If you run more than one Shopify store, your customers are logging in multiple times. Here's how SSO fixes it — and why it matters for AU brands scaling internationally.",
-    imgBg: "linear-gradient(135deg,#5B7B5E,#3a5a3d)",
-    read: "8 min read",
-    date: "24 May 2026",
-  },
-  {
-    slug: "b2b-company-assignment",
-    category: "B2B AUTOMATION",
-    title: "Automating B2B Company Assignment on Shopify Plus: The Complete Guide",
-    excerpt:
-      "Manual company onboarding breaks at scale. Domain-based contact mapping, admin-approved registration, and granular access control — here's how to automate it.",
-    imgBg: "linear-gradient(135deg,#C4704B,#8a4d33)",
-    read: "10 min read",
-    date: "18 May 2026",
-  },
-];
 
 export default function BlogIndex() {
   return (

@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: "Case Studies",
   description:
     "Real Shopify builds for Australian merchants. Shopify Plus migrations, custom AI agents, B2B automation. Shipped, live, generating results.",
+  alternates: { canonical: "/case-studies" },
+  openGraph: {
+    type: "website",
+    url: "/case-studies",
+    images: ["/opengraph-image"],
+    title: "Case Studies — Uddit Shopify Development",
+    description:
+      "Real Shopify builds for Australian merchants. Shopify Plus migrations, custom AI agents, B2B automation. Shipped, live, generating results.",
+  },
 };
 
 const studies = [
