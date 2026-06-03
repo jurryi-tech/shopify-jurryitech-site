@@ -1,0 +1,26 @@
+# Uddit Shopify Development
+
+> Custom Shopify development for Australian merchants — AI agents, store migrations, B2B
+> automation, SSO, and integrations with Australia Post, Afterpay, and Xero. Fixed-price
+> quotes in AUD, AEST business hours.
+
+Site: https://shopify.jurryitech.com
+Contact: contact@jurryi.com
+
+## Pages
+
+- [Home](https://shopify.jurryitech.com/): Services overview — Shopify Plus, custom AI agents, migrations, B2B automation.
+- [Case Studies](https://shopify.jurryitech.com/case-studies): Real shipped builds — Shopify Plus migration with AI size recommendations, custom AI customer-service agent, automated B2B company assignment.
+- [About](https://shopify.jurryitech.com/about): Approach, tech stack, and how engagements work.
+- [Contact](https://shopify.jurryitech.com/contact): Free 30-minute strategy call; fixed-price AUD quotes.
+
+## Blog
+
+- [39 Beautiful Shopify Stores Worth Stealing Ideas From](https://shopify.jurryitech.com/blog/best-shopify-stores): 39 of the best-designed, highest-converting Shopify stores and the design/UX moves that make each work.
+- [How Single Sign-On Solves the Multi-Store Login Nightmare for Shopify Merchants](https://shopify.jurryitech.com/blog/sso-multi-store-login): SSO for merchants running multiple storefronts — SAML, OAuth, OpenID Connect; what to choose and how to implement.
+- [Automating B2B Company Assignment on Shopify Plus](https://shopify.jurryitech.com/blog/b2b-company-assignment): Domain-based contact mapping, admin-approved registration, and granular access control.
+
+## Resources
+
+- Sitemap: https://shopify.jurryitech.com/sitemap.xml
+- RSS feed: https://shopify.jurryitech.com/feed.xml
