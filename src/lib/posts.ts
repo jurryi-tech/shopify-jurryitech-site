@@ -1,4 +1,4 @@
-export const SITE_URL = "https://shopify.uddit.site";
+export const SITE_URL = "https://shopify.jurryitech.com";
 export const SITE_NAME = "Uddit Shopify Development";
 export const AUTHOR = "Uddit";
 

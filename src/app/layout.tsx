@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import MobileStickyCTA from "@/components/MobileStickyCTA";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://shopify.uddit.site"),
+  metadataBase: new URL("https://shopify.jurryitech.com"),
   title: {
     default: "Custom Shopify Solutions for Australian E-Commerce — Uddit",
     template: "%s — Uddit | Shopify Development",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_AU",
-    url: "https://shopify.uddit.site",
+    url: "https://shopify.jurryitech.com",
     title: "Custom Shopify Solutions for Australian E-Commerce — Uddit",
     description:
       "Custom Shopify development for Australian merchants. AI agents, migrations, B2B automation, integrations with Australia Post, Afterpay, Xero.",
@@ -65,7 +65,7 @@ const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Uddit Shopify Development",
-  url: "https://shopify.uddit.site",
+  url: "https://shopify.jurryitech.com",
   description:
     "Custom Shopify development for Australian merchants. AI agents, store migrations, B2B automation, SSO, and integrations with Australia Post, Afterpay, and Xero.",
   areaServed: "AU",
@@ -89,7 +89,7 @@ const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Uddit Shopify Development",
-  url: "https://shopify.uddit.site",
+  url: "https://shopify.jurryitech.com",
   inLanguage: "en-AU",
 };
 
