@@ -59,6 +59,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  verification: {
+    // Google site verification for the Indexing API service account
+    // (verified via the Site Verification API, META method).
+    google: "EsSIjBOBbENyMCRP9OJAbaZkSau4Dlsqb7wFemXEqfU",
+  },
 };
 
 const orgJsonLd = {
